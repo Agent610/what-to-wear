@@ -1,0 +1,78 @@
+/*Desktop View*/
+.header {
+  display: flex;
+  align-items: center;
+  padding: 32px 0 28px;
+}
+
+.header__add-clothes-button {
+  margin-left: auto;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.header__user-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__username {
+  margin: 0;
+}
+
+.header__date-and-location {
+  margin: 0;
+}
+
+.header__logo {
+  margin-right: 24px;
+}
+
+/*Tablet View*/
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 24px 0;
+  }
+
+  .header__logo {
+    margin-right: 16px;
+  }
+
+  .header__add-clothes-button {
+    margin-right: 16px;
+  }
+
+  .header__user-container {
+    gap: 8px;
+  }
+}
+
+/*Mobile View*/
+@media screen and (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+
+  .header__logo {
+    margin-right: 12px;
+  }
+
+  .header__add-clothes-button {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .header__user-container {
+    width: 100%;
+    margin-top: 16px;
+    justify-content: flex-end;
+  }
+
+  .header__username,
+  .header__date-and-location {
+    font-size: 14px;
+  }
+}
