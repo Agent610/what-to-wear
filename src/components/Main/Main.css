@@ -1,0 +1,24 @@
+/* Desktop View */
+.cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 21px;
+}
+
+/* Tablet View */
+@media screen and (max-width: 768px) {
+  .cards__list {
+    gap: 16px;
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 480px) {
+  .cards__list {
+    gap: 12px;
+    justify-content: center;
+  }
+}

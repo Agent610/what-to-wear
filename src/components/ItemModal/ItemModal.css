@@ -1,0 +1,35 @@
+/* /*.modal__content {
+  visibility: visible;
+}
+.modal__content_type_image {
+  visibility: visible;
+} */
+
+/* Desktop View */
+.modal__image {
+  width: 498px;
+  height: 498px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Tablet View */
+@media screen and (max-width: 768px) {
+  .modal__image {
+    width: 90vw;
+    height: auto;
+    max-width: 498px;
+    max-height: 90vh;
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 480px) {
+  .modal__image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 80vh;
+  }
+}

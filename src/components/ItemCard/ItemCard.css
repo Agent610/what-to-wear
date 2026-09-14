@@ -1,0 +1,60 @@
+/* Desktop View */
+.card {
+  width: 323px;
+  height: 326px;
+  border-radius: 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card__name {
+  position: absolute;
+  top: 15px;
+  margin: 0;
+  height: 20px;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.card__image {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Tablet View */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 323px;
+    height: auto;
+    aspect-ratio: 323 / 326;
+  }
+
+  .card__name {
+    top: 12px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 480px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 323 / 326;
+  }
+
+  .card__name {
+    top: 10px;
+    font-size: 14px;
+    padding: 4px;
+  }
+}
