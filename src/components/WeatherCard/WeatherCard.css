@@ -1,0 +1,51 @@
+/* Desktop View */
+.weather-card {
+  position: relative;
+  display: flex;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.weather-card__temperature {
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+}
+
+.weather-card__image {
+  object-fit: cover;
+  object-position: right top;
+  width: 100%;
+}
+
+/* Tablet View */
+@media screen and (max-width: 768px) {
+  .weather-card {
+    height: 75px;
+  }
+
+  .weather-card__temperature {
+    font-size: 32px;
+    line-height: 36px;
+    top: 19px;
+    left: 14px;
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 480px) {
+  .weather-card {
+    height: 70px;
+  }
+
+  .weather-card__temperature {
+    font-size: 28px;
+    line-height: 32px;
+    top: 19px;
+    left: 12px;
+  }
+}
