@@ -1,4 +1,4 @@
-//Key :
+//Key 43877e8bdb7b5b53719014cbd3cf257e:
 
 export const getWeather = ({ latitude, longitude }, APIkey) => {
   return fetch(
