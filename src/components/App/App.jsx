@@ -17,6 +17,19 @@ function App() {
 
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [formData, setFormData] = useState({
+    name: "",
+    imageUrl: "",
+    weather: "",
+  });
+
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      imageUrl: "",
+      weather: "",
+    });
+  };
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -29,7 +42,22 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+    resetForm();
   };
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
@@ -60,6 +88,10 @@ function App() {
             className="modal__input"
             id="name"
             placeholder="Name"
+            value={formData.name}
+            onChange={(event) =>
+              setFormData({ ...formData, name: event.target.value })
+            }
           />
         </label>
         <label htmlFor="imageUrl" className="modal__label">
@@ -69,6 +101,10 @@ function App() {
             className="modal__input"
             id="imageUrl"
             placeholder="Image URL"
+            value={formData.imageUrl}
+            onChange={(event) =>
+              setFormData({ ...formData, imageUrl: event.target.value })
+            }
           />
         </label>
         <fieldset className="modal__radio-buttons">
@@ -78,6 +114,11 @@ function App() {
               id="Hot"
               type="radio"
               name="weather"
+              value="Hot"
+              checked={formData.weather === "Hot"}
+              onChange={(event) =>
+                setFormData({ ...formData, weather: event.target.value })
+              }
               className="modal__radio-input"
             />
             Hot
@@ -90,6 +131,11 @@ function App() {
               id="Warm"
               type="radio"
               name="weather"
+              value="Warm"
+              checked={formData.weather === "Warm"}
+              onChange={(event) =>
+                setFormData({ ...formData, weather: event.target.value })
+              }
               className="modal__radio-input"
             />
             Warm
@@ -102,6 +148,11 @@ function App() {
               id="Cold"
               type="radio"
               name="weather"
+              value="Cold"
+              checked={formData.weather === "Cold"}
+              onChange={(event) =>
+                setFormData({ ...formData, weather: event.target.value })
+              }
               className="modal__radio-input"
             />
             Cold
