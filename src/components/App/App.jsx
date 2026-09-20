@@ -235,6 +235,7 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+          handleCardDelete={handleCardDelete}
         />
         <Footer />
         <AddItemModal
