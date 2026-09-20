@@ -1,0 +1,26 @@
+/*Desktop View*/
+.profile {
+  display: flex;
+  gap: 100px;
+}
+
+.profile__sidebar {
+}
+
+.profile__clothes-section {
+}
+
+/*Tablet View*/
+@media screen and (max-width: 768px) {
+  .profile {
+    gap: 40px;
+  }
+}
+
+/*Mobile View*/
+@media screen and (max-width: 480px) {
+  .profile {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

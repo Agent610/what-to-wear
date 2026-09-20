@@ -1,7 +1,7 @@
 import "./ItemModal.css";
 import CloseButton from "../../assets/Close-Button.png";
 
-function ItemModal({ activeModal, onClose, card }) {
+function ItemModal({ activeModal, onClose, card, handleCardDelete }) {
   function handleOverlayClick(event) {
     if (event.target === event.currentTarget) {
       onClose();
@@ -17,10 +17,18 @@ function ItemModal({ activeModal, onClose, card }) {
         <button onClick={onClose} type="button" className="modal__close">
           <img src={CloseButton} alt="Close-Button" />
         </button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">Weather: {card.weather}</p>
+          <button
+            onClick={() => handleCardDelete(card)}
+            type="button"
+            className="card__delete"
+            onClose={onClose}
+          >
+            Delete Item
+          </button>
         </div>
       </div>
     </div>
